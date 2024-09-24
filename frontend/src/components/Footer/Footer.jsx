@@ -4,7 +4,7 @@ import GoFoodieLogo from "../../assets/png/GoFoodieLogo.png";
 
 const Footer = () => {
   return (
-    <div className='text-[#d9d9d9] bg-[#323232] flex flex-col items-center gap-[20px] pt-[80px] px-[8vw] mt-[100px]'>
+    <div id='contact-us' className='text-[#d9d9d9] bg-[#323232] flex flex-col items-center gap-[20px] pt-[80px] px-[8vw] mt-[100px]'>
         <div className='w-full flex flex-col md:grid md:grid-cols-[2fr_1fr_1fr] gap-[30px] md:gap-[80px] '>
         {/* left */}
           <div className='flex flex-col gap-[20px] items-start'>
