@@ -2,7 +2,7 @@ import React from 'react'
 import { menu_list } from '../../assets/frontend_assets/assets'
 const ExploreMenu = ({category, setCategory}) => {
   return (
-    <div className='flex flex-col gap-[20px]'>
+    <div id='explore-menu' className='flex flex-col gap-[20px]'>
       <h1 className='text-[#262626] text-[2.8vw] font-[500] text-[max(2vw,24px)]'>Explore our menu</h1>
       <p className='max-w-[80%] text-[#808080]'>Choose from a diverse menu featuring a delectable array of dishes. Our mission is to satisfy your cravings and elevate your dining experience, one delicious meal at a time.</p>
       <div className='flex justify-between items-center gap-[30px] text-center my-[20px] overflow-x-scroll scrollbar-hide'>
@@ -20,4 +20,3 @@ const ExploreMenu = ({category, setCategory}) => {
   )
 }
 
-export default ExploreMenu
