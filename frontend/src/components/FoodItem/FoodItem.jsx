@@ -2,13 +2,13 @@ import React, { useContext } from "react";
 import { assets } from "../../assets/frontend_assets/assets";
 import { StoreContext } from "../../Context/StoreContext";
 const FoodItem = ({ id, name, price, description, image }) => {
-  const {cartItems, addToCart, removeFromCart} = useContext(StoreContext);
+  const {cartItems, addToCart, removeFromCart,url} = useContext(StoreContext);
   return (
     <div className="w-full m-auto rounded-[15px] shadow-md transition-[0.3s] animate-[fadeIn_1s]">
       <div className="relative">
         <img
           className="w-full rounded-tl-[15px] rounded-br-[0] rounded-tr-[15px] rounded-bl-[0]"
-          src={image}
+          src={url+"/images/"+image+".png"}
           alt="food-item-img"
         />
         {

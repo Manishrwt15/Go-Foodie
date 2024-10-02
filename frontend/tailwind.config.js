@@ -8,12 +8,8 @@ export default {
     extend: {
       screens:{
         'xs': '120px',
-<<<<<<< HEAD
-        'xsl': '420px'
-=======
         'xsl': '420px',
         'xsll': '550px'
->>>>>>> upstream/main
       }
     },
   },
