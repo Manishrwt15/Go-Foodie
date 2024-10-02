@@ -12,3 +12,12 @@
 .profile{
     width: 40px;
 }
+
+.App-logo{
+    display: flex;
+    flex-direction: column;
+}
+
+.App-logo span{
+font-size: 12px;
+}

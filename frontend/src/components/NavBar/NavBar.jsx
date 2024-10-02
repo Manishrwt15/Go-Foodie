@@ -36,7 +36,7 @@ const navigate = useNavigate();
             <div className='relative cursor-pointer' onMouseEnter={()=>setIsOpen(true)} onMouseLeave={()=>setIsOpen(false)}>
               <img src={assets.profile_icon} alt='' />
               <ul className={`${isOpen ? 'absolute right-0 z-[1] flex flex-col items-center gap-[10px] bg-[#fff2ef] py-[12px] pl-[15px] pr-[30px] rounded-[4px] border border-[#E76715] outline outline-white list-none': 'hidden'}`}>
-                <li className='flex items-center gap-[10px] cursor-pointer'><img src={assets.bag_icon} alt='' className='w-[20px]'/><p className=' text-[#E76715]'>Orders</p></li>
+                <li onClick={()=>navigate('/myorders')} className='flex items-center gap-[10px] cursor-pointer'><img src={assets.bag_icon} alt='' className='w-[20px]'/><p className=' text-[#E76715]'>Orders</p></li>
                 <hr />
                 <li onClick={logout} className='flex items-center gap-[10px] cursor-pointer'> <img src={assets.logout_icon} alt='' className='w-[20px]'/><p className=' text-[#E76715]'>Logout</p></li>
               </ul>
