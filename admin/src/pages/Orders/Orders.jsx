@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import './Orders.css'
 import axios from 'axios'
 import {toast} from 'react-toastify'
-import {assets} from '../../assets/assets'
+import {assets} from '../../assets/frontend_assets/assets'
 
 const Orders = ({url}) => {
   const [orders, setOrders] = useState([]);
@@ -30,7 +30,7 @@ const Orders = ({url}) => {
 
   return (
     <div className='order add'>
-        <h3>Order Page</h3>
+        <h3 className='font-bold'>Order Page</h3>
         <div className='order-list'>
           {orders.map((order, index)=>(
               <div key={index} className='order-item'>

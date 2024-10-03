@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Navbar.css"
-import {assets} from '../../assets/assets'
+import {assets} from '../../assets/frontend_assets/assets'
 import AppLogo from "../../../../frontend/src/assets/png/GoFoodieLogo.png"
 const Navbar = () => {
   return (
