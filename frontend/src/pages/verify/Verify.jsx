@@ -15,9 +15,9 @@ const Verify = () => {
   const verifyPayment =  async () =>{
     const response = await axios.post(url+"/api/order/verify", {success,orderId});
     if(response.data.success=== true){
-      navigate('/myorders');
+      navigate('https://go-foodie-frontend.onrender.com/myorders');
     }else{
-      navigate('/');
+      navigate('https://go-foodie-frontend.onrender.com/');
     }
   }
 
