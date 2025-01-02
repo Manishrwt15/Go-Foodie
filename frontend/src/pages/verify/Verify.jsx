@@ -37,4 +37,4 @@ const Verify = () => {
   );
 };
 
-export default Verify;
+export default Verify
