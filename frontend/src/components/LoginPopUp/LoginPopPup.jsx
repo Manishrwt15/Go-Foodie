@@ -4,41 +4,44 @@ import { StoreContext } from "../../Context/StoreContext";
 import axios from "axios";
 
 const LoginPopPup = ({ setShowLogin }) => {
-  const {url,setToken} = useContext(StoreContext);
+  const { url, setToken } = useContext(StoreContext);
   const [currentState, setCurrentState] = useState("Sign Up");
   const [data, setData] = useState({
     name: "",
     email: "",
-    password: ""
+    password: "",
   });
 
   const onChangeHandler = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setData((prevState) => ({...prevState, [name]: value }));
+    setData((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const onLogin  = async (event) =>{
+  const onLogin = async (event) => {
     event.preventDefault();
     let newUrl = url;
-    if(currentState === 'Login'){
+    if (currentState === "Login") {
       newUrl += "/api/user/login";
-    }else{
+    } else {
       newUrl += "/api/user/register";
     }
     const response = await axios.post(newUrl, data);
-    if(response.data.success){
-        setToken(response.data.token);
-        localStorage.setItem("token", response.data.token);
-        setShowLogin(false);
-    }else{
+    if (response.data.success) {
+      setToken(response.data.token);
+      localStorage.setItem("token", response.data.token);
+      setShowLogin(false);
+    } else {
       alert(response.data.message);
     }
-  } 
+  };
 
   return (
     <div className="fixed inset-0 z-[50] w-full h-full bg-[#00000090] grid">
-      <form  onSubmit={onLogin} className="place-self-center w-[max(23vw,330px)]text-[#808080] bg-white flex flex-col gap-[25px] py-[25px] px-[30px] rounded-[8px] text-[14px] animate-(fadeIn_1.5s)">
+      <form
+        onSubmit={onLogin}
+        className="place-self-center w-[max(23vw,330px)]text-[#808080] bg-white flex flex-col gap-[25px] py-[25px] px-[30px] rounded-[8px] text-[14px] animate-(fadeIn_1.5s)"
+      >
         <div className="flex justify-between items-center text-[#000]">
           <h2 className="font-bold text-xl">{currentState}</h2>
           <img
@@ -67,8 +70,8 @@ const LoginPopPup = ({ setShowLogin }) => {
             type="email"
             placeholder="Your Email"
             name="email"
-              onChange={onChangeHandler}
-              value={data.email}
+            onChange={onChangeHandler}
+            value={data.email}
             className="outline-none border border-[1px] border-[#c9c9c9] p-[10px] rounded-[4px]"
             required
           />
@@ -76,13 +79,16 @@ const LoginPopPup = ({ setShowLogin }) => {
             type="password"
             placeholder="Password"
             name="password"
-              onChange={onChangeHandler}
-              value={data.password}
+            onChange={onChangeHandler}
+            value={data.password}
             className="outline-none border border-[1px] border-[#c9c9c9] p-[10px] rounded-[4px]"
             required
           />
         </div>
-        <button type="submit" className="border-none p-[10px] rounded-[4px] text-white bg-[#DF5E11] text-[15px] cursor-pointer">
+        <button
+          type="submit"
+          className="border-none p-[10px] rounded-[4px] text-white bg-[#DF5E11] text-[15px] cursor-pointer"
+        >
           {currentState === "Sign Up" ? "Create account" : "Login"}
         </button>
         <div className="flex items-start gap-[8px] mt-[-15px]">
