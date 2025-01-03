@@ -42,7 +42,7 @@ const MyOrder = () => {
                   }
                 })}
               </p>
-              <p>${order.amount}.00</p>
+              <p><span>&#8377;</span>{order.amount}.00</p>
               <p>Items: {order.items.length}</p>
               <p>
                 <span className="text-[#DF5E11]">&#x25cf;</span>
